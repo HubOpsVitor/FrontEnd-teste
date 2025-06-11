@@ -1,0 +1,25 @@
+<!-- Botão para abrir o carrinho -->
+<button class="cart-button" id="openCart" aria-label="Abrir carrinho">
+    <span class="material-icons">shopping_cart</span>
+  </button>
+  
+  <!-- Modal do carrinho -->
+  <div class="modal-bg" id="cartModal">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <header class="modal-header">
+        <h2 id="modalTitle">Seu Carrinho</h2>
+        <button class="close-modal" id="closeCart" aria-label="Fechar carrinho">&times;</button>
+      </header>
+  
+      <section class="modal-body" id="cartContent">
+        <!-- Aqui será injetado o conteúdo via backend -->
+        <p class="empty-message">Seu carrinho está vazio.</p>
+      </section>
+  
+      <footer class="modal-footer" id="cartFooter" style="display:none;">
+        <button class="btn btn-secondary" id="continueShopping">Continuar comprando</button>
+        <button class="btn btn-primary" id="checkout">Finalizar compra</button>
+      </footer>
+    </div>
+  </div>
+  

@@ -1,0 +1,668 @@
+/*Tela Inicio */
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+  }
+  
+  /* Barra preta principal */
+  .main-bar {
+    background-color: #000;
+    color: white;
+    padding: 10px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  .container {
+    width: 95%;
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+  /* Logo */
+  .logo img {
+    height: 45px;
+  }
+  
+  /* Área de busca */
+  .search-area {
+    flex: 1;
+    margin: 10px;
+    position: relative;
+  }
+  
+  .search-area input {
+    width: 100%;
+    padding: 10px 45px 10px 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+  }
+  
+  .search-area .material-icons {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #888;
+    cursor: pointer;
+  }
+  
+  /* Ícones da direita */
+  .right-icons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-left: 10px;
+  }
+  
+  .right-icons .material-icons {
+    font-size: 26px;
+    cursor: pointer;
+    transition: color 0.2s ease;
+  }
+  
+  .right-icons .material-icons:hover {
+    color: #ff3c3c;
+  }
+  
+  /* Menu hamburguer (mobile) */
+  .menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
+  }
+  
+  /* Menu de departamentos */
+  .departments-menu {
+    background-color: #1a1a1a;
+  }
+  
+  .departments-menu ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 35px;
+    margin: 0;
+    padding: 10px 0;
+    justify-content: center;
+  }
+  
+  .departments-menu ul li {
+    position: relative;
+  }
+  
+  .departments-menu ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+    padding: 8px 10px;
+    display: block;
+  }
+  
+  .departments-menu ul li a:hover {
+    color: #ff3c3c;
+  }
+  
+  /* Submenu */
+  .has-submenu .submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #1a1a1a;
+    padding: 10px;
+    border: 1px solid #333;
+    z-index: 10;
+    flex-direction: column;
+    width: 220px;
+  }
+  
+  .has-submenu:hover .submenu {
+    display: flex;
+  }
+  
+  .submenu li a {
+    padding: 6px 10px;
+    white-space: nowrap;
+  }
+  
+  .submenu li a:hover {
+    background: #333;
+  }
+  
+  /* Responsivo */
+  @media (max-width: 768px) {
+    .container {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .search-area {
+      width: 100%;
+      margin: 10px 0;
+    }
+  
+    .right-icons {
+      margin-top: 10px;
+    }
+  
+    .menu-toggle {
+      display: block;
+    }
+  
+    .departments-menu ul {
+      display: none;
+      flex-direction: column;
+      align-items: flex-start;
+      padding-left: 20px;
+    }
+  
+    .departments-menu ul.show {
+      display: flex;
+    }
+  
+    .departments-menu ul li {
+      width: 100%;
+    }
+  
+    .has-submenu .submenu {
+      position: static;
+      border: none;
+      padding: 0;
+      background: none;
+      display: none;
+      width: 100%;
+    }
+  
+    .has-submenu:hover .submenu {
+      display: flex;
+    }
+  
+    .submenu li a {
+      padding-left: 20px;
+      color: #ccc;
+    }
+  }
+  /* Rodapé Tela de Inicio */
+  .site-footer {
+    background-color: #1f1f1f;
+    color: #ffffff;
+    padding: 40px 20px;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  .footer-top {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .footer-column {
+    flex: 1 1 200px;
+    min-width: 200px;
+  }
+  
+  .footer-column h4 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #f2f2f2;
+    border-bottom: 2px solid #4CAF50;
+    padding-bottom: 5px;
+  }
+  
+  .footer-column ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-column ul li {
+    margin-bottom: 10px;
+    font-size: 14px;
+  }
+  
+  .footer-column ul li a {
+    color: #cccccc;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  .footer-column ul li a:hover {
+    color: #4CAF50;
+  }
+  
+  .payment-icons {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  
+  .payment-icons img {
+    height: 32px;
+    width: auto;
+  }
+  
+  .social-icons {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  
+  .social-icons a img {
+    width: 32px;
+    height: 32px;
+    transition: transform 0.3s, filter 0.3s;
+  }
+  
+  .social-icons a img:hover {
+    transform: scale(1.1);
+    filter: brightness(1.2);
+  }
+  
+  /* Responsivo */
+  @media (max-width: 768px) {
+    .footer-top {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .footer-column {
+      width: 100%;
+      text-align: center;
+    }
+  
+    .payment-icons,
+    .social-icons {
+      justify-content: center;
+    }
+  }
+
+
+  
+
+  /*Parte fixa do rodapé */
+  .footer-bottom {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color:#1f1f1f; 
+    color: #fff;
+    text-align: center;
+    padding: 5px 10px;
+    z-index: 1000;
+    font-size: 14px;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.3);
+    
+  }
+  
+
+/* TELA DE USUÁRIO */
+/* Reset básico */
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f5f5f5;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+header {
+  background-color: #222;
+  color: white;
+  padding: 15px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+header h1 {
+  margin: 0;
+  font-size: 1.6rem;
+  cursor: default;
+}
+main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+}
+.login-container {
+  background-color: white;
+  padding: 30px 40px;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgb(0 0 0 / 0.1);
+  max-width: 400px;
+  width: 100%;
+}
+.login-container h2 {
+  margin-bottom: 25px;
+  font-weight: 600;
+  font-size: 1.5rem;
+  text-align: center;
+  color: #222;
+}
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #555;
+}
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 20px;
+  border: 1.8px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+input[type="email"]:focus,
+input[type="password"]:focus {
+  border-color: #007bff;
+  outline: none;
+}
+button {
+  width: 100%;
+  background-color: #007bff;
+  border: none;
+  padding: 14px 0;
+  color: white;
+  font-size: 1.1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 700;
+  transition: background-color 0.3s ease;
+}
+button:hover {
+  background-color: #0056b3;
+}
+.links {
+  margin-top: 15px;
+  text-align: center;
+  font-size: 0.9rem;
+}
+.links a {
+  color: #007bff;
+  text-decoration: none;
+  margin: 0 10px;
+  transition: text-decoration 0.3s ease;
+}
+.links a:hover {
+  text-decoration: underline;
+}
+footer {
+  text-align: center;
+  padding: 15px;
+  font-size: 0.85rem;
+  color: #888;
+  background-color: #fafafa;
+}
+@media (max-width: 480px) {
+  .login-container {
+    padding: 20px;
+  }
+}
+
+/* TELA CARRINHO */
+/* Reset básico */
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f5f5f5;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Cabeçalho */
+header.header {
+  background-color: #222;
+  color: white;
+  padding: 15px 30px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+header.header .logo {
+  height: 50px;
+}
+header.header h1 {
+  margin: 0;
+  font-size: 1.6rem;
+  cursor: default;
+}
+
+/* Container principal */
+main.cart-container {
+  flex: 1;
+  max-width: 960px;
+  margin: 40px auto;
+  background: white;
+  padding: 30px 40px;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgb(0 0 0 / 0.1);
+}
+main.cart-container h2 {
+  margin-bottom: 30px;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #222;
+}
+
+/* Tabela do carrinho */
+/* Reset básico */
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f5f5f5;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Cabeçalho */
+header.header {
+  background-color: #222;
+  color: white;
+  padding: 15px 30px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+header.header .logo {
+  height: 50px;
+}
+header.header h1 {
+  margin: 0;
+  font-size: 1.6rem;
+  cursor: default;
+}
+
+/* Container principal */
+main.cart-container {
+  flex: 1;
+  max-width: 960px;
+  margin: 40px auto;
+  background: white;
+  padding: 30px 40px;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgb(0 0 0 / 0.1);
+}
+main.cart-container h2 {
+  margin-bottom: 30px;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #222;
+}
+
+/* TELA CARRINHO */
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0; 
+  padding: 0;
+}
+
+/* Botão do carrinho */
+.cart-button {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 50px; 
+  height: 50px;
+  cursor: pointer;
+  font-size: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 3px 8px rgb(0 123 255 / 0.5);
+}
+
+/* Fundo do modal */
+.modal-bg {
+  display: none;
+  position: fixed;
+  top: 0; 
+  left: 0; 
+  right: 0; 
+  bottom: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Conteúdo do modal */
+.modal {
+  background: white;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 450px;
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 8px 24px rgb(0 0 0 / 0.2);
+}
+
+.modal-header {
+  padding: 16px 24px;
+  border-bottom: 1px solid #ddd;
+  font-size: 1.25rem;
+  font-weight: bold;
+  position: relative;
+}
+
+/* Botão fechar modal */
+.close-modal {
+  position: absolute;
+  right: 16px;
+  top: 16px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #666;
+}
+
+.modal-body {
+  padding: 20px 24px;
+  overflow-y: auto;
+  flex-grow: 1;
+}
+
+.empty-message {
+  text-align: center;
+  color: #777;
+  font-size: 1.1rem;
+}
+
+/* Lista de itens */
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.cart-item-name {
+  font-weight: 600;
+}
+
+.cart-item-qty {
+  color: #555;
+  font-size: 0.9rem;
+}
+
+/* Rodapé do modal */
+.modal-footer {
+  padding: 16px 24px;
+  border-top: 1px solid #ddd;
+  display: flex;
+  gap: 12px;
+}
+
+.btn {
+  flex: 1;
+  padding: 12px 0;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+.btn-secondary {
+  background-color: #eee;
+  color: #444;
+}
+
+.btn-secondary:hover {
+  background-color: #ccc;
+}
+
