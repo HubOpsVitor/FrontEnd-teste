@@ -37,6 +37,19 @@
       </div>
     </div>
   </header>
+  <!-- Carrinho-->
+   <!-- Ícone do carrinho -->
+<button id="cart-button" class="cart-icon">🛒</button>
+
+<!-- Carrinho (menu lateral escondido) -->
+<div id="cart-menu" class="cart-menu">
+  <h2>Seu Carrinho</h2>
+  <ul id="cart-items">
+    <li>Nada aqui ainda... triste 😢</li>
+  </ul>
+  <button id="close-cart">Fechar</button>
+</div>
+
 
   <!-- Menu de Departamentos -->
   <nav class="departments-menu">
@@ -180,6 +193,20 @@
     </div>
   </footer>
   
-  
+  <!--Menu Hamburgue-->
+  <script>
+  const cartButton = document.getElementById('cart-button');
+  const cartMenu = document.getElementById('cart-menu');
+  const closeCart = document.getElementById('close-cart');
+
+  cartButton.addEventListener('click', () => {
+    cartMenu.classList.add('open');
+  });
+
+  closeCart.addEventListener('click', () => {
+    cartMenu.classList.remove('open');
+  });
+</script>
+
 </body>
 </html>

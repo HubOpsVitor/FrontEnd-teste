@@ -31,6 +31,8 @@ function carregar_novidades() {
     carregar_maisvendidos();
 }
 
+
+
 let pe = 0;
 const passo = 200;
 const limiteEsquerda = -600;
