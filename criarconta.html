@@ -1,67 +1,91 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Área do Usuário - TecSanches</title>
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Criar Conta - TecSanches</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
 </head>
-
 <body>
+    <!-- Barra preta principal -->
+    <header class="header">
+        <a href="index.html">
+          <img src="img/logo1.png" alt="Logo da loja" class="logo" />
+        </a>
+      </header>
 
-  <header class="header">
-    <a href="index.html">
-      <img src="img/logo1.png" alt="Logo da loja" class="logo" />
-    </a>
+    <!-- CORPO DA PAGINA -->
   </header>
+  <div class="container">
+    <form class="form-cadastro">
+      <h1>Crie sua conta pessoal</h1>
+      <p class="info">Será solicitado uma confirmação do cadastro por e-mail.</p>
 
-  <main>
-    <section class="login-container">
-      <div style="flex: 1; min-width: 280px;">
-        <h2>Bem-vindo(a) de volta</h2>
-        <p>Já é cliente da TecSanches?<br>
-          Então bora logar!<br>Informe seu e-mail e senha abaixo.
-        </p>
-
-        <form action="#" method="post">
-          <label for="email">E-mail</label>
-          <input type="email" id="email" name="email" placeholder="seu@email.com" required />
-
-          <label for="password">Senha</label>
-          <input type="password" id="password" name="password" placeholder="********" required />
-          
-      <title>Formulário com reCAPTCHA</title>
-        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-        </head>
-        <body>
-      <form action="verificar.php" method="POST">
-        <label>Nome:</label>
-          <input type="text" name="nome" required><br>
-
-       <!-- CAPTCHA aqui -->
-       <div class="g-recaptcha" data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"></div>
-
-        <br>
-        <input type="submit" value="Enviar">
-         </form>
-          <button type="submit">Entrar</button>
-        </form>
-
-        <div class="links">
-          <a href="criarconta.html">Criar conta</a> | <a href="#">Esqueci a senha</a>
-        </div>
+      <div class="form-group">
+        <input type="text" placeholder="Seu nome" required>
+        <input type="text" placeholder="Sobrenome" required>
       </div>
 
-      <div class="destaque">
-        <img src="img/friday.png" id="imagem-promo" alt="Promoção especial" />
+      <div class="form-group">
+        <input type="date" placeholder="Data de Nascimento" required>
       </div>
-    </section>
-  </main>
+
+      <div class="form-group">
+        <input type="tel" placeholder="Celular ou Whatsapp" required>
+        <input type="text" placeholder="CPF" required>
+      </div>
+
+      <div class="form-group">
+        <input type="email" placeholder="E-mail" required>
+        <input type="email" placeholder="Digite novamente o e-mail" required>
+      </div>
+
+      <div class="form-group">
+        <input type="password" placeholder="Senha" required>
+        <input type="password" placeholder="Digite novamente a senha" required>
+      </div>
+
+      <p class="dica-senha">Hora de mitar na senha, heim...</p>
+
+      <div class="form-group checkbox">
+        <label>
+          <input type="checkbox">
+          Desejo receber notícias e novidades
+        </label>
+      </div>
+
+      <p class="termos">
+        Ao criar a conta, declaro que li, entendi e aceito os <a href="#">Termos de venda</a>, <a href="#">Garantia</a> e suas condições e as <a href="#">Políticas de privacidade</a> da TecSanches.
+      </p>
+      
+      <button type="submit">CRIAR CONTA</button>
+
+
+      <p class="opcoes">
+        <a href="usuario.html">LOGIN</a> | 
+        <a href="pj.html">Pessoa Jurídica? Clique aqui | </a>
+        <a href="esqueciminhasenha.html">Esqueci minha Senha</a>
+      </p>
+    </form>
+  </div>
+
+   <!-- CAPTCHA-->
+   <script>
+    function validarFormulario(e) {
+      const resposta = grecaptcha.getResponse();
+      if (resposta.length === 0) {
+        alert("Por favor, confirme que você não é um robô.");
+        e.preventDefault();
+      }
+    }
+  
+    document.querySelector(".form-cadastro").addEventListener("submit", validarFormulario);
+  </script>
+  
+
    <!--Rodapé-->
-  <footer class="site-footer">
+ <footer class="site-footer">
     <div class="footer-top">
       <div class="footer-column">
         <h4>Formas de Pagamento</h4>
@@ -151,55 +175,20 @@
      
     </div>
   </footer>
-  <footer>
-    <script src="script.js"></script>
-  </footer>
+
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
 </body>
-
+<script>
+    function validarFormulario(e) {
+      const resposta = grecaptcha.getResponse();
+      if (resposta.length === 0) {
+        alert("Por favor, confirme que você não é um robô.");
+        e.preventDefault();
+      }
+    }
+  
+    document.querySelector(".form-cadastro").addEventListener("submit", validarFormulario);
+  </script>
+  
 </html>
-=======
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Área do Usuário - TecSanches</title>
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css" />
-</head>
-<body>
-
-  
-  <header class="header">
-    <img src="img/logo1.png" alt="Logo TecSanches" class="logo" />
-  </header>
-  
-  <main>
-    <section class="login-container">
-      <h2>Entrar na sua conta</h2>
-      <form action="#" method="post">
-        <label for="email">E-mail</label>
-        <input type="email" id="email" name="email" placeholder="seu@email.com" required />
-
-        <label for="password">Senha</label>
-        <input type="password" id="password" name="password" placeholder="********" required />
-
-        <button type="submit">Entrar</button>
-      </form>
-      <div class="links">
-        <a href="#">Criar conta</a> | <a href="#">Esqueci a senha</a>
-      </div>
-    </section>
-
-  
-      
-  </main>
-
-  <footer>
-    &copy; 2025 TecSanches. Todos os direitos reservados.
-  </footer>
-
-</body>
-</html>
->>>>>>> 48bf867b4be9fe9d031d996ec20321d97b72fcb8
