@@ -1,4 +1,4 @@
-function obterData() {
+/*function obterData() {
     const dataAtual = new Date()
     const options = {
         weekday: 'long',
@@ -212,4 +212,4 @@ const area_carrinho = document.getElementsByClassName("carrinho")[0];
 const div_qtd_itens = document.createElement("div");
 div_qtd_itens.setAttribute("id", "div_qtd_itens");
 div_qtd_itens.innerHTML = qtd_produtos_carrinho;
-area_carrinho.appendChild(div_qtd_itens);
+area_carrinho.appendChild(div_qtd_itens);*/

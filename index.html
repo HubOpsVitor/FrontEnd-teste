@@ -32,6 +32,19 @@
         </button>
       </div>
 
+      <li id="li-usuario"> <a href="usuario.html" title="Perfil" class="icon-button">
+        <span class="material-icons">person_outline</span>
+        <p>Olá, entre <br>ou cadastre-se</p>
+      </a></li>
+      
+    <li id="li-carrinho">
+      <div class="right-icons">
+        <a href="javascript:void(1);" id="cart-button1" title="Carrinho" class="icon-button">
+          <span class="material-icons">shopping_cart</span>
+        </a>
+      </div>
+    </li>
+
        
 
     </div>
@@ -205,14 +218,24 @@
   <!--Menu Hamburgue-->
   <script>
     const cartButton = document.getElementById('cart-button');
+    const cartButton1 = document.getElementById('cart-button1');
     const cartMenu = document.getElementById('cart-menu');
     const closeCart = document.getElementById('close-cart');
+    const closeCart1 = document.getElementById('close-cart1');
 
     cartButton.addEventListener('click', () => {
       cartMenu.classList.add('open');
     });
 
     closeCart.addEventListener('click', () => {
+      cartMenu.classList.remove('open');
+    });
+
+    cartButton1.addEventListener('click', () => {
+      cartMenu.classList.add('open');
+    });
+
+    closeCart1.addEventListener('click', () => {
       cartMenu.classList.remove('open');
     });
   </script>

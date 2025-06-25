@@ -524,6 +524,17 @@ footer {
 }
 
 /* TELA CARRINHO */
+
+.main-bar #li-usuario {
+  display: none;
+  visibility: hidden;
+}
+
+.main-bar #li-carrinho {
+  display: none;
+  visibility: hidden;
+}
+
 /* Reset básico */
 * {
   box-sizing: border-box;
@@ -1051,8 +1062,7 @@ body {
 .search-area .material-icons {
   position: absolute;
   right: 10px;
-  top: 50%;
-  transform: translateY(-50%);
+  top: 15%;
   color: #888;
   cursor: pointer;
 }
@@ -1630,6 +1640,25 @@ body {
   display: none;
   visibility: hidden;
 }
+
+.main-bar #li-usuario {
+  cursor: pointer;
+}
+
+.main-bar #li-carrinho {
+  cursor: pointer;
+}
+::marker {
+
+color: rgb(0, 0, 0);
+unicode-bidi: isolate;
+font-variant-numeric: tabular-nums;
+text-transform: none;
+text-indent: 0px !important;
+text-align: start !important;
+text-align-last: auto !important;
+}
+
 
 /* Botão do carrinho */
 .cart-button {
